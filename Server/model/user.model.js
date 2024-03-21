@@ -9,10 +9,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    profile: {
-        type: String,
-        required: false,
-    },
+    // profileImage: {
+    //     type: String,
+    //     required: true,
+    // },
     mobile: {
         type: Number,
         required: true,

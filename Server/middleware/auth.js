@@ -7,7 +7,7 @@ const Createtoken = (data) => {
 
 const authenticate = (req, res) => {
     let token = req.cookies['token']
-    console.log(token, "lkjhbvc");
+    console.log(token, "mmmmmmmmmmmmmmmmmmmmmm");
     if (!token) {
         res.status(400).json({ message: 'you are not login' })
     } else {
