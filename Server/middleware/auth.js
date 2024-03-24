@@ -2,10 +2,10 @@ const jwt = require('jsonwebtoken')
 const secretKey = process.env.JWTSECRET;
 
 const Createtoken = (data) => {
-    return jwt.sign({ data }, secretKey)
+    return jwt.sign({ data }, secretKey) 
 }
 
-const authenticate = (req, res) => {
+const authenticate = (req, res,next) => {
     let token = req.cookies['token']
     console.log(token, "mmmmmmmmmmmmmmmmmmmmmm");
     if (!token) {
@@ -15,8 +15,8 @@ const authenticate = (req, res) => {
             let user = jwt.verify(token, secretKey);
             req.user = user;
             next();
-        } catch (e) {
-            res.status(403).send({ auth: false, message: 'Failed to authenticate token.' });
+        } catch (err) {
+            res.status(400).json({ auth: false, message: 'Failed to authenticate token.' ,err});
         }
 
     }

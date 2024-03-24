@@ -6,4 +6,7 @@ const movieCreate = (body) => {
     return movieSchema.create(body);
 }
 
-module.exports = { movieCreate}
+const getAllMovies = () => {
+    return movieSchema.find()
+}
+module.exports = { movieCreate, getAllMovies }

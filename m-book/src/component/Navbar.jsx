@@ -10,10 +10,8 @@ const Navbar = () => {
                 </div>
 
                 <ul className="menu menu-horizontal px-1">
-                <Link to="/">
-                    <li><a>Home</a></li>
-                </Link>
-                    <li><a>Item 3</a></li>
+                <Link to="/"><li><a>Home</a></li></Link>
+                    <Link to="/AddMovie"><li><a>Add Movie</a></li></Link>
                 </ul>
                 <Link to="/login">
                     <button className='text-white bg-red-600 p-2 rounded-lg w-20 '>Login</button>

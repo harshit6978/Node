@@ -5,10 +5,10 @@ const CreateMovie = async (req, res) => {
 
     try {
 
-        const { Name, actor, director, price } = req.body;
+        const { Name, actor, director, price,movieImage } = req.body;
         console.log(req.body);
 
-        if (!Name || !actor || !director || !price) {
+        if (!Name || !actor || !director || !price || !movieImage) {
             return res.status(400).json({ msg: "Please enter all fields" })
         }
 
@@ -27,4 +27,23 @@ const CreateMovie = async (req, res) => {
 
 }
 
-module.exports = { CreateMovie }
+
+const getMovie = async (req, res) => {
+    try {
+
+        const data = await movieService.getAllMovies()
+        res.status(200).json({
+            message1:"Successfully fetched the movies",
+            data
+        })
+
+    } catch (err) {
+        res.status(400).json({
+            message: "data not access"
+        });
+    }
+
+
+}
+
+module.exports = { CreateMovie, getMovie }

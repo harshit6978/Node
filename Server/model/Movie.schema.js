@@ -5,18 +5,22 @@ const movieschema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    actor:{
-        type:String,
-        required:true,
+    actor: {
+        type: String,
+        required: true,
     },
-    director:{
-        type:String,
-        required:true,
+    director: {
+        type: String,
+        required: true,
     },
-    // Description: {
-    //     type: String,
-    //     required: true,
-    // },
+    movieImage: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true
+    },
     price: {
         type: Number,
         required: true,
